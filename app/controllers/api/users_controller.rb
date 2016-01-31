@@ -1,7 +1,7 @@
 class Api::UsersController < ApplicationController
   def index
     a = User.all.order("score DESC").limit(10)
-    render json: a, status: :ok
+    render json: { score_list: a }, status: :ok
   end
 
   def create
